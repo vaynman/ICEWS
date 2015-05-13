@@ -38,10 +38,9 @@ df$TrgStateAbb <- factor(df$TrgStateAbb);
 df$TrgStateCode <- factor(df$TrgStateCode);
 df$Target_Country <- factor(df$Target_Country);
 
-aggregate(filtered_events$Intensity, list(year(filtered_events$Event_Date)), mean)
-aggregate(!is.na(filtered_events), list(year(filtered_events$Event_Date)), sum)
-aggregate(df$Intensity ~ df$SrcStateAbb + df$TrgStateAbb, df, mean);
 
+# Compute number of events per year
+aggregate(!is.na(filtered_events), list(year(filtered_events$Event_Date)), sum)
 
 # Some summary stats on Intensity by Source and Target Country
 x = aggregate(Intensity ~ Source_Country + Target_Country, df,  
