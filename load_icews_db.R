@@ -3,8 +3,7 @@
 
  library("RMySQL")
 # Connect to a MySQL database running locally
-con <- dbConnect(RMySQL::MySQL(), dbname = "icews", 
-		user = "vaynman", password="igor123");
+con <- dbConnect(RMySQL::MySQL(), dbname = "icews", user = "vaynman");
 
 sql <- "select E.*, 
 	  CC.Description, CC.Intensity, 
